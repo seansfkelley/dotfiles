@@ -3,7 +3,7 @@ git-start() {
         echo "fatal: requires feature name"
         return
     fi
-    git fetch && git checkout -b "feature/$1" origin/master && git push origin -u "feature/$1"
+    git fetch && git checkout -b "feature/$1" origin/develop && git push origin -u "feature/$1"
 }
 
 git-finish() {
@@ -11,5 +11,5 @@ git-finish() {
         echo "fatal: requires feature name"
         return
     fi
-    git fetch && git checkout -q origin/master && git branch -d "feature/$1" && git push origin ":feature/$1"
+    git fetch && git checkout -q origin/develop && git branch -d "feature/$1" && git push origin ":feature/$1"
 }
