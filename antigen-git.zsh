@@ -11,6 +11,9 @@ compdef _git gst=git-show
 # clobber existing gc! because I prefer this functionality
 alias gc!='git commit -v --amend -C HEAD'
 compdef _git gc!=git-commit
+alias gdev='git fetch && git checkout origin/develop'
+alias gmaster='git fetch && git checkout origin/master'
 
 alias gstart='git-start'
 alias gfinish='git-finish'
+alias ghotfix='git-hotfix'
