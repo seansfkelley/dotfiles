@@ -17,3 +17,5 @@ alias gmaster='git fetch && git checkout origin/master'
 alias gstart='git-start'
 alias gfinish='git-finish'
 alias ghotfix='git-hotfix'
+
+alias githlog='git log --date-order --all --graph --format="%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ad%Creset %C(red bold)%d%Creset%s"'
