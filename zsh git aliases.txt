@@ -1,0 +1,43 @@
+g
+ga        add
+gb        branch
+gba       branch -a
+gc        commit -v
+gc!       commit -v --amend
+gca       commit -v -a
+gca!      commit -v -a --amend
+gcl       config --list
+gcm       checkout master
+gcmsg     commit -m
+gco       checkout
+gcp       cherry-pick
+gd        diff
+gdc       diff --cached
+glg       log --stat --max-count=10
+glgg      log --graph --max-count=10
+glgga     log --graph --decorate --all
+glo       log --oneline
+gm        merge
+gl        pull
+gup       pull --rebase
+gp        push
+gr        remote
+grba      rebase --abort
+grbc      rebase --continue
+grbi      rebase -i
+grh       reset HEAD
+grhh      reset HEAD --hard
+gclean    reset --hard && git clean -dfx
+grmv      remote rename
+grrm      remote remove
+grset     remote set-url
+grup      remote update
+grv       remote -v
+gcount    shortlog -sn
+gss       status -s
+gst       status
+gsta      stash
+gsts      stash show --text
+gstp      stash pop
+gstd      stash drop
+gwc       whatchanged -p --abbrev-commit --pretty=medium
