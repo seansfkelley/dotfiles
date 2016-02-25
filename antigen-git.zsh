@@ -11,11 +11,9 @@ compdef _git gst=git-show
 # clobber existing gc! because I prefer this functionality
 alias gc!='git commit -v --amend -C HEAD'
 compdef _git gc!=git-commit
-alias gdev='git fetch && git checkout origin/develop'
-alias gmaster='git fetch && git checkout origin/master'
 
-alias gstart='git-start'
-alias gfinish='git-finish'
-alias ghotfix='git-hotfix'
+# clobber existing glg(g) because I prefer this functionality
+glg='git log --stat'
+glgg='git log --graph'
 
 alias githlog='git log --date-order --all --graph --format="%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ad%Creset %C(red bold)%d%Creset%s"'
