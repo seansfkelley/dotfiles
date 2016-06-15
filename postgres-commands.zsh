@@ -12,6 +12,6 @@ pg_reinit() {
   fi
 }
 
-pg_valhalla() {
-  pg_reinit && pg_start && createuser valhalla && createdb -Ovalhalla -Eutf8 valhalla && echo 'done! use postgres://valhalla@localhost:5432/valhalla'
+pg_bedrock_projects() {
+  pg_reinit && pg_start && createuser postgres && createdb -Opostgres -Eutf8 projects && echo 'done! use postgres://postgres@localhost:5432/projects'
 }
