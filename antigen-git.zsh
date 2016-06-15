@@ -13,7 +13,7 @@ alias gc!='git commit -v --amend -C HEAD'
 compdef _git gc!=git-commit
 
 # clobber existing glg(g) because I prefer this functionality
-glg='git log --stat'
-glgg='git log --graph'
+alias glg='git log --stat'
+alias glgg='git log --graph'
 
 alias githlog='git log --date-order --all --graph --format="%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ad%Creset %C(red bold)%d%Creset%s"'
