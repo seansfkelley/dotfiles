@@ -19,8 +19,17 @@ function get_git_prompt_info() {
   fi
 }
 
+# This only works because it runs before the git things, /probably/.
+function get_last_command_exit_code_prompt_info() {
+  if ( test $? = 0 ); then
+    echo "%{$fg[white]%}-%{$reset_color%}"
+  else
+    echo "%{$fg[red]%}!%{$reset_color%}"
+  fi
+}
+
 PROMPT='%{$fg[yellow]%}%~
-%{$fg[blue]%}[%*] %{$fg[white]%}$(get_git_prompt_info)%{$reset_color%}⟩ '
+$(get_last_command_exit_code_prompt_info) %{$fg[blue]%}[%*] %{$fg[white]%}$(get_git_prompt_info)%{$reset_color%}⟩ '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=" "
