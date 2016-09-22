@@ -1,3 +1,5 @@
+GIT_HELPER_DIR=${0:a:h}
+
 git-feature() {
     if [ -z $1 ]; then
         echo "fatal: requires feature name"
@@ -29,3 +31,7 @@ git-bugfix-finish() {
     fi
     git fetch && git checkout -q origin/develop && git branch -d "bugfix/$1" && git push origin ":bugfix/$1"  --no-verify
 }
+
+export PATH="$GIT_HELPER_DIR/git-number:$PATH"
+
+alias gn='git number --column'
