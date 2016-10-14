@@ -12,6 +12,9 @@ pg_reinit() {
   fi
 }
 
-pg_bedrock_projects() {
-  pg_reinit && pg_start && createuser postgres && createdb -Opostgres -Eutf8 projects && echo 'done! use postgres://postgres@localhost:5432/projects'
+pg_bedrock() {
+  NEW_USERNAME='bedrock'
+  NEW_DBNAME='projects'
+
+  pg_reinit && pg_start && createuser "$NEW_USERNAME" --superuser && echo "created user $NEW_USERNAME" && createdb -O"$NEW_USERNAME" -Eutf8 "$NEW_DBNAME" && echo "done! use postgres://localhost:5432/$NEW_DBNAME"
 }

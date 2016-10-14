@@ -12,3 +12,7 @@ function f() {
 function npmtsd() {
   npm "$@" && tsd "$@"
 }
+
+function vscode () {
+  VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
+}
