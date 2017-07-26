@@ -38,4 +38,4 @@ alias gn='git number --column'
 
 alias ghpr='git push origin HEAD -u && open https://github.palantir.build/$(git ls-remote --get-url origin | sed -E -e "s/^.+:(.+)\.git$/\1/")/compare/develop...$(git rev-parse --abbrev-ref HEAD)'
 
-alias gh="open `git remote get-url origin | sed -Ee 's#(git@|git://)#https://#' -e 's@:([^:]+).git$@/\1@'`"
+alias gh='open $(git remote get-url origin | sed -Ee '"'"'s#(git@|git://)#https://#'"'"' -e '"'"'s@:([^:]+).git$@/\1@'"'"')'
