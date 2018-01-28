@@ -3,8 +3,16 @@ alias b='afplay /System/Library/Sounds/Glass.aiff -v 2'
 alias n='osascript -e "display notification with title \"Task Finished\""'
 alias jsonpretty='python -m json.tool'
 alias gimme-usrlocal='sudo chown -R skelley /usr/local/{lib,bin,share}'
-alias fuck-carbonblack='ps aux | grep CbOsxSensorService | grep CarbonBlack | sed -E "s/ +/ /g" | cut -d " " -f 2 | sudo xargs kill -9'
 
 function f() {
   find . -iname "*$1*"
+}
+
+function bulk-rename() {
+  if [ "$#" -ne 3 ]; then
+    echo "Usage: bulk-rename <search-path> <from-ext> <to-ext>"
+    return 1
+  fi
+
+  find $1 -type f -name "*$2" -exec sh -c 'mv "$1" "${1%'$2'}'$3'"' _ {} \;
 }

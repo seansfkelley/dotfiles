@@ -32,9 +32,10 @@ git-bugfix-finish() {
     git fetch && git checkout -q origin/develop && git branch -d "bugfix/$1" && git push origin ":bugfix/$1"  --no-verify
 }
 
+
 export PATH="$GIT_HELPER_DIR/git-number:$PATH"
 
-alias gn='git number --column'
+alias gn='nocorrect git number --column'
 
 alias ghpr='git push origin HEAD -u && open https://github.palantir.build/$(git ls-remote --get-url origin | sed -E -e "s/^.+:(.+)\.git$/\1/")/compare/develop...$(git rev-parse --abbrev-ref HEAD)'
 
