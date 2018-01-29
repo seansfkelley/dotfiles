@@ -1,5 +1,3 @@
-antigen bundle git
-
 source "$( cd "$( dirname $0 )" && pwd )"/git-helpers.sh
 
 alias gf='git fetch'

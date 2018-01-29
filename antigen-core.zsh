@@ -10,3 +10,4 @@ antigen bundle python
 antigen bundle tmuxinator
 antigen bundle yarn
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle git

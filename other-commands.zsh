@@ -2,7 +2,6 @@ alias t='t_time_tracker'
 alias b='afplay /System/Library/Sounds/Glass.aiff -v 2'
 alias n='osascript -e "display notification with title \"Task Finished\""'
 alias jsonpretty='python -m json.tool'
-alias gimme-usrlocal='sudo chown -R skelley /usr/local/{lib,bin,share}'
 
 function f() {
   find . -iname "*$1*"
