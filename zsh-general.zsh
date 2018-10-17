@@ -4,7 +4,7 @@ export JAVA_HOME=${JAVA_9_HOME}
 
 SHELL_SETUP="$( cd "$( dirname $0 )" && pwd )"
 
-alias settings="subl; subl ~/.zshrc $SHELL_SETUP/*.{sh,zsh}"
+alias settings="subl; subl ~/.zshrc ~/.zprofile $SHELL_SETUP/*.{sh,zsh}"
 
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
