@@ -1,10 +1,18 @@
-alias t='t_time_tracker'
-alias b='afplay /System/Library/Sounds/Glass.aiff -v 2'
-alias n='osascript -e "display notification with title \"Task Finished\""'
 alias jsonpretty='python -m json.tool'
 
 function f() {
   find . -iname "*$1*"
+}
+
+function notify() {
+	"$@"
+	exit_code="$?"
+	if [ "$exit_code" -eq 0 ]; then
+		terminal-notifier -title "task success"  -message '' -sound Pop
+	else
+		terminal-notifier -title "task failure"  -message '' -sound Pop
+	fi
+	return $exit_code
 }
 
 function bulk-rename() {
