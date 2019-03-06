@@ -3,14 +3,12 @@ alias gh='open $(git remote get-url origin | sed -Ee '"'"'s#(git@|git://)#https:
 alias ghpr='git push origin HEAD -u && open https://github.com/$(git ls-remote --get-url origin | sed -E -e "s/^.+:(.+)\.git$/\1/")/compare/master...$(git rev-parse --abbrev-ref HEAD)'
 alias githlog='git log --date-order --all --graph --format="%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ad%Creset %C(red bold)%d%Creset%s"'
 
-alias gf='git fetch'
-compdef _git gf=git-fetch
 alias grb='git rebase'
-compdef _git gst=git-rebase
+compdef _git grb=git-rebase
 alias gsh='git show'
-compdef _git gst=git-show
+compdef _git gsh=git-show
 alias gpn='git push origin $(git rev-parse --abbrev-ref HEAD) -u'
-compdef _git gp!=git-push
+compdef _git gpn=git-push
 # clobber existing gc! because I prefer this functionality
 alias gc!='git commit -v --amend -C HEAD'
 compdef _git gc!=git-commit

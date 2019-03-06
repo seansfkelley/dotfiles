@@ -1,4 +1,4 @@
-export EDITOR=/usr/bin/emacs
+export EDITOR=emacs
 
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
