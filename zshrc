@@ -1,11 +1,10 @@
-source <path_to_shell_setup>/zsh-general.zsh
+export SHELL=/usr/local/bin/zsh
+export PATH=/usr/local/bin:$PATH
 
-source <path_to_shell_setup>/antigen-core.zsh
-
+source <path_to_antigen.zsh>
 antigen apply
 
+source <path_to_shell_setup>/meta.zsh
+source <path_to_shell_setup>/antigen-bundles.zsh
 source <path_to_shell_setup>/antigen-theme.zsh
-source <path_to_shell_setup>/antigen-git.zsh
-
-
-source <path_to_shell_setup>/tmuxinator.zsh
+source <path_to_shell_setup>/specifics.zsh
