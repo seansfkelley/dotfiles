@@ -13,8 +13,29 @@ pg_reinit() {
 }
 
 pg_start_anew() {
-  NEW_USERNAME='dbuser'
-  NEW_DBNAME='dev'
+  if [ "$#" -lt 1 ]; then
+    echo "usage: pg_start_anew <db> <username?>"
+    return 1
+  fi
 
-  pg_reinit && pg_start && createuser "$NEW_USERNAME" --superuser && echo "created user $NEW_USERNAME" && createdb -O"$NEW_USERNAME" -Eutf8 "$NEW_DBNAME" && echo "done! use postgres://localhost:5432/$NEW_DBNAME"
+  NEW_DBNAME="$1"
+
+  if [ "$#" -eq 1 ]; then
+    NEW_USERNAME="$USER"
+  else
+    NEW_USERNAME="$2"
+  fi
+
+  pg_reinit || return 1
+  pg_start || return 1
+
+  if [[ "$USER" == "$NEW_USERNAME" ]]; then
+    echo "not creating user -- is same as current user"
+  else
+    createuser "$NEW_USERNAME" --superuser || return 1
+    echo "created user $NEW_USERNAME"
+  fi
+
+  createdb -O"$NEW_USERNAME" -Eutf8 "$NEW_DBNAME" || return 1
+  echo "done! use postgres://localhost:5432/$NEW_DBNAME"
 }

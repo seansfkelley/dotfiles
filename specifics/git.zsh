@@ -14,6 +14,9 @@ alias gc!='git commit -v --amend -C HEAD'
 compdef _git gc!=git-commit
 # clobber existing gbda because this functionality is more reasonable and safer
 alias gbda='git branch --no-color --merged origin/master | command grep -vE "^(\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d'
+# clobber existing gap because I never use apply
+alias gap='git -c "interactive.diffFilter=less" add -p'
+alias gcom='git fetch && git checkout origin/master'
 
 function gnb() {
   if [ "$#" -lt 1 ]; then
