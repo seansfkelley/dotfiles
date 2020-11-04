@@ -1,6 +1,7 @@
 alias gn='nocorrect git number --column'
 alias gh='open $(git remote get-url origin | sed -Ee '"'"'s#(git@|git://)#https://#'"'"' -e '"'"'s@:([^:]+).git$@/\1@'"'"')'
 alias ghpr='git push origin HEAD -u && open https://github.com/$(git ls-remote --get-url origin | sed -E -e "s/^.+:(.+)\.git$/\1/")/compare/master...$(git rev-parse --abbrev-ref HEAD)'
+alias ghpr-main='git push origin HEAD -u && open https://github.com/$(git ls-remote --get-url origin | sed -E -e "s/^.+:(.+)\.git$/\1/")/compare/main...$(git rev-parse --abbrev-ref HEAD)'
 alias githlog='git log --date-order --all --graph --format="%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ad%Creset %C(red bold)%d%Creset%s"'
 
 alias grb='git rebase'
@@ -13,10 +14,13 @@ compdef _git gpn=git-push
 alias gc!='git commit -v --amend -C HEAD'
 compdef _git gc!=git-commit
 # clobber existing gbda because this functionality is more reasonable and safer
-alias gbda='git branch --no-color --merged origin/master | command grep -vE "^(\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d'
+alias gbda='git branch --no-color --merged origin/main | command grep -vE "^(\*|\s*(master|develop|dev|main)\s*$)" | command xargs -n 1 git branch -d'
+alias gbd!='git branch -D'
 # clobber existing gap because I never use apply
 alias gap='git -c "interactive.diffFilter=less" add -p'
-alias gcom='git fetch && git checkout origin/master'
+alias gcom='git fetch && (git checkout origin/master || git checkout origin/main)'
+alias gmm='git fetch && (git merge origin/master || git merge origin/main)'
+alias grbm='git fetch && (git rebase origin/master || git rebase origin/main)'
 
 function gnb() {
   if [ "$#" -lt 1 ]; then
@@ -26,7 +30,7 @@ function gnb() {
 
   local branch_name="$1"
   shift
-  git fetch && git checkout -b "$branch_name" origin/master $*
+  git fetch && (git checkout -b "$branch_name" origin/master $* || git checkout -b "$branch_name" origin/main $*)
   return $?
 }
 compdef _git gnb=git-checkout
