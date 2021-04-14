@@ -32,7 +32,7 @@ function maybe_run_passprompt() {
   # https://stackoverflow.com/questions/592620/how-can-i-check-if-a-program-exists-from-a-bash-script
   if command -v passprompt &> /dev/null
   then
-    passprompt ask -n 2
+    passprompt ask -n 1
   fi
 }
 
