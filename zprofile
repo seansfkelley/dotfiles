@@ -1,5 +1,4 @@
-export SHELL=/usr/local/bin/zsh
-
+# brew
 export PATH=/usr/local/bin:$PATH
 
 export LC_ALL=en_US.UTF-8
