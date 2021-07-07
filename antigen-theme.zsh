@@ -22,9 +22,9 @@ function get_git_prompt_info() {
 # This only works because it runs before the git things, which would change the exit code.
 function get_last_command_exit_code_prompt_info() {
   if ( test $? = 0 ); then
-    echo "%{$fg[white]%}-%{$reset_color%}"
+    echo "%{$fg[white]%}✓%{$reset_color%}"
   else
-    echo "%{$fg[red]%}!%{$reset_color%}"
+    echo "%{$fg[red]%}✕%{$reset_color%}"
   fi
 }
 
@@ -42,5 +42,5 @@ $(get_last_command_exit_code_prompt_info) $(maybe_run_passprompt)%{$fg[blue]%}[%
 
 ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=" "
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}!"
-ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}-"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}±"
+ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[white]%}∅"
