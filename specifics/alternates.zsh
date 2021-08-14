@@ -16,7 +16,6 @@ function use_alternate() {
 }
 
 alias cat='use_alternate cat bat'
-alias ls='use_alternate ls exa'
 alias du='use_alternate du dust'
 alias tree='use_alternate tree broot'
 alias find='use_alternate find fd'
