@@ -11,8 +11,6 @@ compdef _git gc!=git-commit
 # clobber existing gbda because this functionality is more reasonable and safer
 alias gbda='git branch --no-color --merged origin/master | command grep -vE "^(\*|\s*(master|develop|dev|main)\s*$)" | command xargs -n 1 git branch -d'
 alias gbd!='git branch -D'
-# clobber existing gapa because the configured diffFilter doesn't work with it
-alias gapa='git -c "interactive.diffFilter=less" add -p'
 alias gcom='git fetch && git checkout origin/master'
 alias gmm='git fetch && git merge origin/master'
 alias grbm='git fetch && git rebase origin/master'
