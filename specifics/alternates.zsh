@@ -1,3 +1,10 @@
+if [ $(command -v bat) ]; then
+  ORIGINAL_BAT_PATH="$(which bat)"
+  function bat() {
+    "$ORIGINAL_BAT_PATH" --theme="$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)" "$@"
+  }
+fi
+
 function use_alternate() {
   old="$1"
   new="$2"
