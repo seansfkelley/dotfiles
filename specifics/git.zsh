@@ -1,7 +1,7 @@
 alias gn='nocorrect git number --column'
 alias gh='open $(git remote get-url origin | sed -Ee '"'"'s#(git@|git://)#https://#'"'"' -e '"'"'s@:([^:]+).git$@/\1@'"'"')'
-alias ghpr='git push origin HEAD -u && open "https://github.com/$(git ls-remote --get-url origin | sed -E -e "s/^.+:(.+)\.git$/\1/")/compare/${GIT_MAIN_BRANCH:-master}"...$(git rev-parse --abbrev-ref HEAD)'
-alias githlog='git log --date-order --all --graph --format="%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ad%Creset %C(red bold)%d%Creset%s"'
+alias ghpr='git push origin HEAD -u && open "https://github.com/$(git ls-remote --get-url origin | sed -E -e "s/^.+:(.+)\.git$/\1/")/pull/new/$(git rev-parse --abbrev-ref HEAD)"'
+alias githlog='git log --date-order --graph --format="%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ad%Creset%C(red bold)%d%Creset %s"'
 
 alias gpn='git push origin $(git rev-parse --abbrev-ref HEAD) -u'
 compdef _git gpn=git-push
