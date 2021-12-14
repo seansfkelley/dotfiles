@@ -11,11 +11,11 @@ function use_alternate() {
   shift 2
 
   if [ $(command -v "$new") ]; then
-    read "answer?can't $old, use $new instead? Y/n "
+    read "answer?don't use $old, use $new instead? Y/n "
     if [[ "$answer" == "" ]] || [[ "$answer" =~ '^[Yy]$' ]]; then
       "$new" "$@"
     else
-      return 1
+      "$old" "$@"
     fi
   else
     "$old" "$@"
