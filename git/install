@@ -1,0 +1,34 @@
+#!/bin/bash
+
+set -euo pipefail
+
+cd "$(dirname "$0")"
+
+source="$HOME/.gitconfig-shared"
+target="$(pwd)/gitconfig"
+if (! stat -q "$source" > /dev/null) || [ "$(grealpath "$source")" != "$target" ]; then
+  echo "creating symlink at ${source/$HOME/~}..."
+  rm -f "$source"
+  ln -s "$target" "$source"
+else
+  echo "${source/$HOME/~} symlink already up-to-date"
+fi
+
+if (! stat -q ~/.gitconfig > /dev/null) || (! grep -q -E 'path *= *.gitconfig-shared' ~/.gitconfig); then
+  echo "adding include to ~/.gitconfig..."
+  echo "
+[include]
+  path = .gitconfig-shared
+" >> ~/.gitconfig
+else
+  echo "~/.gitconfig already up-to-date"
+fi
+
+if ! command -v diff-so-fancy > /dev/null; then
+  echo "installing diff-so-fancy..."
+  brew install diff-so-fancy
+else
+  echo "diff-so-fancy already installed"
+fi
+
+echo "done!"

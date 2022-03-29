@@ -1,0 +1,17 @@
+-- official docs: https://www.postgresql.org/docs/current/app-psql.html
+-- make your prompt look like this: host:port user@database=#
+\set PROMPT1 '%M:%[%033[1;31m%]%>%[%033[0m%] %n@%/%R%#%x '
+-- make the extra lines for multi line commands be prefixed with \t instead of extra garbage, makes c+p easier
+\set PROMPT2 '\t'
+-- display timing of queries you run
+\timing
+-- store infinite history
+\set HISTSIZE -1
+-- store history per host/db
+\set HISTFILE ~/.psql_history-:HOST-:DBNAME
+-- actually show something for null
+\pset null '∅'
+-- only store a command once in history if you run it many times
+\set HISTCONTROL ignoredups
+-- switch to tabular if rows are wide
+\x auto

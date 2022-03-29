@@ -1,0 +1,112 @@
+{
+  "Bound Private Method": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "privatebound",
+    "body": ["private $1 = ($0) => {", "  ", "};"]
+  },
+  "describe Suite": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "describe",
+    "body": ["describe(\"$1\", () => {", "  $0", "});"]
+  },
+  "it Test": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "itshould",
+    "body": ["it(\"should $1\", () => {", "  $0", "});"]
+  },
+  "it Test (skip)": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "itskip",
+    "body": ["it.skip(\"should $1\", () => {", "  $0", "});"]
+  },
+  "it Test (todo)": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "ittodo",
+    "body": ["it.todo(\"should $0\");"]
+  },
+  "import gql": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "graphql",
+    "body": ["import gql from \"graphql-tag\";"]
+  },
+  "GraphQL query": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "query",
+    // Here's how to go the other way:
+    // https://stackoverflow.com/questions/51277998/vs-code-how-to-convert-snippet-placeholder-from-camelcase-to-screaming-snake-ca
+    "body": [
+      "const ${1:QUERY} = gql`",
+      "  query ${1/^([A-Z0-9]+)_?|([A-Z0-9])([A-Z0-9]+)_?/${1:/downcase}${2:/upcase}${3:/downcase}/g}($0) {",
+      "    ",
+      "  }",
+      "`;"
+    ]
+  },
+  "GraphQL mutation": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "mutation",
+    // Here's how to go the other way:
+    // https://stackoverflow.com/questions/51277998/vs-code-how-to-convert-snippet-placeholder-from-camelcase-to-screaming-snake-ca
+    "body": [
+      "const ${1:MUTATION} = gql`",
+      "  mutation ${1/^([A-Z0-9]+)_?|([A-Z0-9])([A-Z0-9]+)_?/${1:/downcase}${2:/upcase}${3:/downcase}/g}($$0) {",
+      "    ",
+      "  }",
+      "`;"
+    ]
+  },
+  "GraphQL fragment": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "fragment",
+    // Here's how to go the other way:
+    // https://stackoverflow.com/questions/51277998/vs-code-how-to-convert-snippet-placeholder-from-camelcase-to-screaming-snake-ca
+    "body": [
+      "const $1_FRAGMENT = gql`",
+      "  fragment ${1/([A-Z0-9])([A-Z0-9]+)_?/${1:/upcase}${2:/downcase}/g} on $0 {",
+      "    ",
+      "  }",
+      "`;"
+    ]
+  },
+  "useQuery Hook": {
+    "prefix": "usequery",
+    "body": [
+      "const ${5:result} = useQuery<$1Query, $1QueryVariables>(${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g}, { variables: { $0 } });"
+    ]
+  },
+  "useMutation Hook": {
+    "prefix": "usemutation",
+    "body": [
+      "const [${0:$1}] = useMutation<$1Mutation, $1MutationVariables>(${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g});"
+    ]
+  },
+  "useState Hook": {
+    "prefix": "usestate",
+    "body": [
+      "const [$1, set${1/(^[a-z])/${1:/upcase}/}] = React.useState${3:<$4>}($2);"
+    ]
+  },
+  "useEffect Hook": {
+    "prefix": "useeffect",
+    "body": ["React.useEffect(() => {", "  $0", "}, []);"]
+  },
+  "useCallback Hook": {
+    "prefix": "usecallback",
+    "body": ["const $1 = React.useCallback(($2) => {", "  $0", "}, []);"]
+  },
+  "import useQuery": {
+    "scope": "typescriptreact",
+    "prefix": "usequery",
+    "body": ["import { useQuery } from \"@apollo/react-hooks\";"]
+  },
+  "import useMutation": {
+    "scope": "typescriptreact",
+    "prefix": "usemutation",
+    "body": ["import { useMutation } from \"@apollo/react-hooks\";"]
+  },
+  "import statement": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "import",
+    "body": ["import { $0 } from \"$1\";"]
+  }
+}

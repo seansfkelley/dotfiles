@@ -1,0 +1,94 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "editor.fontFamily": "Inconsolata",
+  "editor.fontSize": 15,
+  "editor.scrollBeyondLastLine": false,
+  "editor.tabSize": 2,
+  "editor.cursorStyle": "block",
+  "editor.cursorBlinking": "solid",
+  "editor.minimap.enabled": true,
+  "editor.suggest.showStatusBar": true,
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.minimap.size": "fit",
+  "editor.formatOnSave": true,
+  "editor.rulers": [100],
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.iconTheme": null,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "window.autoDetectColorScheme": true,
+  "telemetry.telemetryLevel": "off",
+  "extensions.ignoreRecommendations": true,
+  "problems.showCurrentInStatus": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "*.log*": true,
+    "**/__generated__": true,
+    "**/.dist": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.sass-cache": true,
+    "**/*.js.map": true,
+    "**/build": true,
+    "**/node_modules": true
+  },
+  "files.associations": {
+    "*.vert": "glslx",
+    "*.frag": "glslx",
+    "*.g": "yacc",
+    "*.lalrpop": "rust"
+  },
+  "search.mode": "reuseEditor",
+  "search.exclude": {
+    "**/dist": true,
+    "**/distributions": true,
+    "**/lib": false,
+    "**/vendor": true,
+    "**/yarn.lock": true
+  },
+  "search.useIgnoreFiles": true,
+  "git.enabled": true,
+  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+  "emmet.triggerExpansionOnTab": true,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.blame.dateFormat": "YYYY-MM-DD",
+  "gitlens.blame.format": "${message|40} ${date}",
+  "gitlens.keymap": "chorded",
+  "debug.javascript.codelens.npmScripts": "never",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.tsserver.log": "off",
+  "typescript.tsserver.maxTsServerMemory": 8192,
+  "redhat.telemetry.enabled": false,
+  "xml.format.preserveEmptyContent": true,
+  "vscode-office-xml.formatOnOpen": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[xml]": {
+    // Disabled until such time as it doesn't remove whitespace inside DOCX text nodes.
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "editor.guides.bracketPairs": true,
+  "typescript.preferences.useAliasesForRenames": false,
+  "javascript.preferences.useAliasesForRenames": false,
+  "window.zoomLevel": 2,
+  "workbench.colorTheme": "Default Light+"
+}

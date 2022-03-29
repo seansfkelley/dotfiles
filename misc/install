@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -euo pipefail
+
+cd "$(dirname "$0")"
+
+source="$HOME/.psqlrc"
+target="$(pwd)/psqlrc"
+if (! stat -q "$source" > /dev/null) || [ "$(grealpath "$source")" != "$target" ]; then
+  echo "creating symlink at ${source/$HOME/~}..."
+  rm -f "$source"
+  ln -s "$target" "$source"
+else
+  echo "${source/$HOME/~} symlink already up-to-date"
+fi
+
+echo "done!"

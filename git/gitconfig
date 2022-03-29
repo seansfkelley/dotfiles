@@ -1,0 +1,36 @@
+[user]
+  email = seansfkelley@users.noreply.github.com
+
+[color]
+	ui = true
+
+[push]
+	default = simple
+	followTags = true
+
+[diff]
+	compactionHeuristic = true
+
+# diff-so-fancy configuration
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+
+[diff-so-fancy]
+	markEmptyLines = false
+
+[interactive]
+	diffFilter = diff-so-fancy --patch
+
+[color "diff"]
+	meta = "yellow"
+	frag = "magenta bold"
+	func = "146 bold"
+	commit = "yellow bold"
+
+# diff-highlight configuration
+# [pager]
+# 	log = diff-highlight | less
+# 	show = diff-highlight | less
+# 	diff = diff-highlight | less
+# [interactive]
+# 	diffFilter = diff-highlight

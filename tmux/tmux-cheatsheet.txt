@@ -1,0 +1,50 @@
+tmux
+
+new -s <session>
+a -t <session>
+ls
+kill-session -t myname
+
+prefix, then:
+
+[panes]
+|  vertical split
+-  horizontal split
+
+o  focus next
+q  show numbers
+x  kill
++  break into window
+-  restore from window
+⍽  space - toggle between layouts
+{  move current left
+}  move current right
+z  toggle zoom
+
+[window]
+c  create
+w  list
+n  next
+p  previous
+f  find
+,  name
+. number
+&  kill
+
+[sessions]
+:new<CR>  new session
+s         list sessions
+$         name session
+
+[resize]
+alt-[arrow]  resize 5 lines in direction
+:resize-pane -[DULR] (-t <number>) (#)
+
+[copy] (emacs version)
+[  enter copy mode
+   ctrl-⍽ begin selection
+   alt-W copy region
+]  paste
+
+[misc]
+t  display time

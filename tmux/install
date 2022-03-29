@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -euo pipefail
+
+cd "$(dirname "$0")"
+
+source="$HOME/.tmux.conf"
+target="$(pwd)/tmux.conf"
+if (! stat -q "$source" > /dev/null) || [ "$(grealpath "$source")" != "$target" ]; then
+  echo "creating symlink at ${source/$HOME/~}..."
+  rm -f "$source"
+  ln -s "$target" "$source"
+else
+  echo "${source/$HOME/~} symlink already up-to-date"
+fi
+
+if ! command -v reattach-to-user-namespace > /dev/null; then
+  echo "installing reattach-to-user-namespace..."
+  brew install reattach-to-user-namespace
+else
+  echo "reattach-to-user-namespace already installed"
+fi
+
+echo "done!"
