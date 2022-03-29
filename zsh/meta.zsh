@@ -1,2 +1,19 @@
 DOTFILES="$(cd "$(dirname "$0")" && cd .. && pwd)"
-alias settings="code ~/.zshrc ~/.zprofile $DOTFILES/zsh/**/*.zsh"
+alias dotfiles="code $DOTFILES"
+
+function push-dotfiles() {
+  pushd "$DOTFILES"
+  git add .
+  git diff --cached
+  echo -n 'Look good? (y/N) '
+  read response
+  if [[ "$response" =~ "^(y|Y|yes)$" ]]; then
+    echo -n 'Message? (optional) '
+    read message
+    git commit -m "${message:-Updating dotfiles.}"
+    git push origin HEAD:master
+  else
+    echo 'Aborting!'
+  fi
+  popd
+}

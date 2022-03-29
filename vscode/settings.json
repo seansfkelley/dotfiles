@@ -11,7 +11,9 @@
   "editor.copyWithSyntaxHighlighting": false,
   "editor.minimap.size": "fit",
   "editor.formatOnSave": true,
-  "editor.rulers": [100],
+  "editor.rulers": [
+    100
+  ],
   "editor.bracketPairColorization.enabled": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.iconTheme": null,
@@ -90,5 +92,5 @@
   "typescript.preferences.useAliasesForRenames": false,
   "javascript.preferences.useAliasesForRenames": false,
   "window.zoomLevel": 2,
-  "workbench.colorTheme": "Default Light+"
+  "security.workspace.trust.enabled": false
 }
