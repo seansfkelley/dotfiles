@@ -93,5 +93,6 @@
   "javascript.preferences.useAliasesForRenames": false,
   "window.zoomLevel": 2,
   "security.workspace.trust.enabled": false,
-  "workbench.colorTheme": "Default Light+"
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false
 }

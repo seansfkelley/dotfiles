@@ -14,6 +14,7 @@ function push-dotfiles() {
     git push origin HEAD:master
   else
     echo 'Aborting!'
+    git reset
   fi
   popd
 }
