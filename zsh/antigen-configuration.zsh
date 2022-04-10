@@ -4,7 +4,12 @@ antigen bundle andrewferrier/fzf-z
 antigen use oh-my-zsh
 antigen bundle command-not-found
 antigen bundle tmuxinator
-antigen bundle git
 antigen bundle osx
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle z
+antigen theme simple
+
+antigen apply
+
+# what the shit https://github.com/zsh-users/antigen/issues/676
+antigen bundle git

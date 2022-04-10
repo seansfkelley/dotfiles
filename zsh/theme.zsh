@@ -1,4 +1,4 @@
-antigen theme simple
+# customizations to the `simple` theme, which is assumed to have been loaded by now
 
 declare ENABLE_DIRTY_GIT_PROMPT=true
 

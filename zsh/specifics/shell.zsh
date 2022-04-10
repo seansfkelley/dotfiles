@@ -2,6 +2,7 @@ export EDITOR=emacs
 
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+alias reload="exec -l $SHELL"
 
 function notify() {
 	"$@"
@@ -13,5 +14,3 @@ function notify() {
 	fi
 	return $exit_code
 }
-
-alias reload-shell="exec -l $SHELL"
