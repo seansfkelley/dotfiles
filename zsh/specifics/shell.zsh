@@ -13,3 +13,5 @@ function notify() {
 	fi
 	return $exit_code
 }
+
+alias reload-shell="exec -l $SHELL"

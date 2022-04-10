@@ -12,9 +12,16 @@ function push-dotfiles() {
     read message
     git commit -m "${message:-Updating dotfiles.}"
     git push origin HEAD:master
+    popd
   else
-    echo 'Aborting!'
     git reset
+    echo -n 'Want to stick around and do it by hand? (Y/n) '
+    read response
+    if [[ "$response" =~ "^(n|N|no)$" ]]; then
+      echo 'Aborting!'
+      popd
+    else
+      echo "popd when you're done!"
+    fi
   fi
-  popd
 }

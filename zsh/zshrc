@@ -5,7 +5,7 @@ unset -v GEM_HOME
 # antigen
 source <path_to_antigen.zsh>
 antigen apply
-source <path_to_dotfiles>/zsh/meta.zsh
+source <path_to_dotfiles>/zsh/dotfiles.zsh
 source <path_to_dotfiles>/zsh/antigen-bundles.zsh
 source <path_to_dotfiles>/zsh/antigen-theme.zsh
 source <path_to_dotfiles>/zsh/specifics.zsh
