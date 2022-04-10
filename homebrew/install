@@ -5,3 +5,8 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 brew bundle install --file=./Brewfile
+
+if [ ! -f ~/.fzf.zsh ]; then
+  # make sure fzf bits and bobs are available
+  "$(brew --prefix)/opt/fzf/install"
+fi
