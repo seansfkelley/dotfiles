@@ -25,3 +25,12 @@ function push-dotfiles() {
     fi
   fi
 }
+
+function pull-dotfiles() {
+  pushd "$DOTFILES"
+  git reset
+  git stash
+  git pull
+  git stash pop
+  popd
+}
