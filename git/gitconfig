@@ -1,6 +1,10 @@
 [user]
   email = seansfkelley@users.noreply.github.com
 
+[alias]
+	# https://stackoverflow.com/a/4991675
+	branch-point = !zsh -c 'source /Users/seankelley/.zshrc && diff --old-line-format='' --new-line-format='' <(git rev-list --first-parent "${1:-origin/${GIT_MAIN_BRANCH:-master}}") <(git rev-list --first-parent "${2:-HEAD}") | head -1' -
+
 [color]
 	ui = true
 
