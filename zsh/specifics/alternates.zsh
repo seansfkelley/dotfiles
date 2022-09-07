@@ -1,7 +1,7 @@
 if [ $(command -v bat) ]; then
   ORIGINAL_BAT_PATH="$(which bat)"
   function bat() {
-    "$ORIGINAL_BAT_PATH" --theme="$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)" "$@"
+    "$ORIGINAL_BAT_PATH" --theme="$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo Visual Studio Dark+ || echo GitHub)" "$@"
   }
 fi
 
