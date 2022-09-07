@@ -15,9 +15,28 @@
 [diff]
 	compactionHeuristic = true
 
+# difftastic configuration
+# -----------------------------------------------------------------------------
+[diff]
+	tool = difftastic
+
+[difftool]
+	prompt = false
+
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+	difftool = true
+
+[alias]
+	dft = difftool
+
 # diff-so-fancy configuration
-[core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+# -----------------------------------------------------------------------------
+[pager]
+	show = diff-so-fancy | less --tabs=4 -RFX
+	diff = diff-so-fancy | less --tabs=4 -RFX
 
 [diff-so-fancy]
 	markEmptyLines = false
@@ -32,6 +51,7 @@
 	commit = "yellow bold"
 
 # diff-highlight configuration
+# -----------------------------------------------------------------------------
 # [pager]
 # 	log = diff-highlight | less
 # 	show = diff-highlight | less
