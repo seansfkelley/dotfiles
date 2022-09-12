@@ -9,11 +9,8 @@
   "editor.minimap.enabled": true,
   "editor.suggest.showStatusBar": true,
   "editor.copyWithSyntaxHighlighting": false,
-  "editor.minimap.size": "fit",
   "editor.formatOnSave": true,
-  "editor.rulers": [
-    100
-  ],
+  "editor.rulers": [100],
   "editor.bracketPairColorization.enabled": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.iconTheme": null,
@@ -43,7 +40,8 @@
     "*.vert": "glslx",
     "*.frag": "glslx",
     "*.g": "yacc",
-    "*.lalrpop": "rust"
+    "*.lalrpop": "rust",
+    "*.html.erb": "erb"
   },
   "search.mode": "reuseEditor",
   "search.exclude": {
@@ -51,11 +49,11 @@
     "**/distributions": true,
     "**/lib": false,
     "**/vendor": true,
-    "**/yarn.lock": true
+    "**/yarn.lock": true,
+    "**/sorbet": true
   },
   "search.useIgnoreFiles": true,
   "git.enabled": true,
-  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
   "emmet.triggerExpansionOnTab": true,
   "gitlens.codeLens.enabled": false,
   "gitlens.blame.dateFormat": "YYYY-MM-DD",
@@ -94,5 +92,12 @@
   "window.zoomLevel": 2,
   "security.workspace.trust.enabled": false,
   "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "emmet.includeLanguages": {
+    "erb": "html"
+  },
+  "editor.minimap.scale": 2,
+  "editor.minimap.size": "fit",
+  "editor.minimap.showSlider": "always",
+  "editor.stickyScroll.enabled": true
 }
