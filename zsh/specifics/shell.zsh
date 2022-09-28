@@ -1,4 +1,4 @@
-export EDITOR=emacs
+export EDITOR='code --wait'
 
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
