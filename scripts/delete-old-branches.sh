@@ -2,12 +2,11 @@
 
 set -euo pipefail
 
-GITHUB_REPO="???/???"
 INTERVAL=$(( 60 * 60 * 24 * 7 * 52 )) # in seconds
 
 SCRIPT_NAME="$0"
 function exit_with_usage() {
-  echo "Usage: $SCRIPT_NAME -t,--token TOKEN [-y,--yes]"
+  echo "Usage: $SCRIPT_NAME -r,--repo REPO -t,--token TOKEN [-y,--yes]"
   exit 1
 }
 
@@ -24,6 +23,9 @@ while [ "${1:-}" != "" ]; do
     -y|--yes)
       SHOULD_DELETE=1
       ;;
+    -r|--repo)
+      GITHUB_REPO="$2" ; shift
+      ;;
     -t|--token)
       GITHUB_TOKEN="$2" ; shift
       ;;
@@ -35,10 +37,16 @@ while [ "${1:-}" != "" ]; do
 done
 
 SHOULD_DELETE="${SHOULD_DELETE:-}"
+GITHUB_REPO="${GITHUB_REPO:-}"
 GITHUB_TOKEN="${GITHUB_TOKEN:-}"
 OPEN_PR_BRANCHES_FILE=/tmp/open-branches
 OLD_BRANCHES_FILE=/tmp/old-branches
 BRANCHES_TO_DELETE_FILE=/tmp/branches-to-delete
+
+if [ -z "$GITHUB_REPO" ] ; then
+  echo "-r,--repo is required"
+  exit_with_usage
+fi
 
 if [ -z "$GITHUB_TOKEN" ] ; then
   echo "-t,--token is required"
