@@ -15,6 +15,9 @@
 [diff]
   compactionHeuristic = true
 
+[rebase]
+  autosquash = true
+
 # difftastic configuration
 # -----------------------------------------------------------------------------
 [diff]
@@ -31,24 +34,6 @@
 
 [alias]
   dft = difftool
-
-# diff-so-fancy configuration
-# -----------------------------------------------------------------------------
-# [pager]
-# 	show = diff-so-fancy | less --tabs=4 -RFX
-# 	diff = diff-so-fancy | less --tabs=4 -RFX
-
-# [diff-so-fancy]
-# 	markEmptyLines = false
-
-# [interactive]
-# 	diffFilter = diff-so-fancy --patch
-
-# [color "diff"]
-# 	meta = "yellow"
-# 	frag = "magenta bold"
-# 	func = "146 bold"
-# 	commit = "yellow bold"
 
 # delta configuration
 # -----------------------------------------------------------------------------

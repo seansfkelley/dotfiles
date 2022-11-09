@@ -1,7 +1,6 @@
 brew "antigen"
 brew "bat"
 brew "coreutils"
-brew "diff-so-fancy"
 brew "difftastic"
 brew "emacs"
 brew "fd"
