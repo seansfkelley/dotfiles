@@ -4,6 +4,8 @@
 [alias]
   # https://stackoverflow.com/a/4991675
   branch-point = !zsh -c 'source /Users/seankelley/.zshrc && diff --old-line-format='' --new-line-format='' <(git rev-list --first-parent "${1:-origin/${GIT_MAIN_BRANCH:-master}}") <(git rev-list --first-parent "${2:-HEAD}") | head -1' -
+  # https://jordanelver.co.uk/blog/2020/06/04/fixing-commits-with-git-commit-fixup-and-git-rebase-autosquash/
+  fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
 
 [color]
   ui = true
