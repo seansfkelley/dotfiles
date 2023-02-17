@@ -24,11 +24,18 @@ else
   echo "~/.gitconfig already up-to-date"
 fi
 
-if ! command -v diff-so-fancy > /dev/null; then
-  echo "installing diff-so-fancy..."
-  brew install diff-so-fancy
+if ! command -v delta > /dev/null; then
+  echo "installing delta..."
+  brew install delta
 else
-  echo "diff-so-fancy already installed"
+  echo "delta already installed"
+fi
+
+if ! command -v difft > /dev/null; then
+  echo "installing difftastic..."
+  brew install difftastic
+else
+  echo "difftastic already installed"
 fi
 
 echo "done!"

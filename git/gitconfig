@@ -73,12 +73,3 @@
 
 [diff]
   colorMoved = default
-
-# diff-highlight configuration
-# -----------------------------------------------------------------------------
-# [pager]
-# 	log = diff-highlight | less
-# 	show = diff-highlight | less
-# 	diff = diff-highlight | less
-# [interactive]
-# 	diffFilter = diff-highlight
