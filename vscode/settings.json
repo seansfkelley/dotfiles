@@ -12,12 +12,20 @@
   "editor.formatOnSave": true,
   "editor.rulers": [100],
   "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.minimap.scale": 2,
+  "editor.minimap.size": "fit",
+  "editor.minimap.showSlider": "always",
+  "editor.stickyScroll.enabled": true,
+  "editor.linkedEditing": true,
+  "window.confirmBeforeClose": "keyboardOnly",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.iconTheme": null,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
+    "*.ipynb": "jupyter.notebook.ipynb",
+    "git-rebase-todo": "default"
   },
   "window.autoDetectColorScheme": true,
   "telemetry.telemetryLevel": "off",
