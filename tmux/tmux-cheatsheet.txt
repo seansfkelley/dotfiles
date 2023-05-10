@@ -1,50 +1,43 @@
-tmux
+full command              prefixed hotkey    notes
+===============================================================================
 
-new -s <session>
-a -t <session>
-ls
-kill-session -t myname
+windows
+-------------------------------------------------------------------------------
+new-window                c
+select-window -t #        #                  # = any number key
+choose-tree -Zw           w                  interactively choose window/pane
+rename-window             ,
+move-window               .                  a.k.a renumbering
+kill-window               &
 
-prefix, then:
+panes
+-------------------------------------------------------------------------------
+split-pane -h             \  [or]  |
+split-pane -v             -
+kill-pane                 x
+swap-pane -U              {
+swap-pane -D              }
+display-panes             q
+select-pane -t :.+        o                  that is, next pane
+select-pane -L            h
+select-pane -D            j
+select-pane -U            k
+select-pane -R            l
+resize-pane -L 5          C-h
+resize-pane -D 5          C-j
+resize-pane -U 5          C-k
+resize-pane -R 5          C-l
+resize-pane -Z            z                  toggle full-screen for current pane
+next-layout               Space
+copy-mode                 [
+paste-buffer -b           ]
 
-[panes]
-|  vertical split
--  horizontal split
+copy-mode
+-------------------------------------------------------------------------------
+send-keys -X begin-selection     C-Space
+copy-pipe-and-cancel      M-w
 
-o  focus next
-q  show numbers
-x  kill
-+  break into window
--  restore from window
-⍽  space - toggle between layouts
-{  move current left
-}  move current right
-z  toggle zoom
+misc
+-------------------------------------------------------------------------------
+list-keys                                    show currently configured hotkeys
 
-[window]
-c  create
-w  list
-n  next
-p  previous
-f  find
-,  name
-. number
-&  kill
-
-[sessions]
-:new<CR>  new session
-s         list sessions
-$         name session
-
-[resize]
-alt-[arrow]  resize 5 lines in direction
-:resize-pane -[DULR] (-t <number>) (#)
-
-[copy] (emacs version)
-[  enter copy mode
-   ctrl-⍽ begin selection
-   alt-W copy region
-]  paste
-
-[misc]
-t  display time
