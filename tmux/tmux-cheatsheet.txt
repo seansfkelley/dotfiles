@@ -30,6 +30,8 @@ resize-pane -R 5          C-l
 resize-pane -Z            z                  toggle full-screen for current pane
 next-layout               Space
 copy-mode                 [
+  begin-selection         C-Space
+  copy-pipe               C-w
 paste-buffer -b           ]
 
 copy-mode
