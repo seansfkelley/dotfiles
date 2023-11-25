@@ -27,6 +27,7 @@
     "*.ipynb": "jupyter.notebook.ipynb",
     "git-rebase-todo": "default"
   },
+  "workbench.activityBar.location": "top",
   "window.autoDetectColorScheme": true,
   "telemetry.telemetryLevel": "off",
   "extensions.ignoreRecommendations": true,
