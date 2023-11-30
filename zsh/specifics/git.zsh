@@ -11,9 +11,12 @@ compdef _git gc!=git-commit
 # clobber existing gbda because this functionality is more reasonable and safer
 alias gbda='git branch --no-color --merged "origin/${GIT_MAIN_BRANCH:-master}" | command grep -vE "^(\*|\+|\s*(master|develop|dev|main)\s*$)" | command xargs -n 1 git branch -d'
 alias gbd!='git branch -D'
+# clobber existing gr because I never use `git remote`
+alias gr='git reset'
 alias gcom='git fetch && git checkout "origin/${GIT_MAIN_BRANCH:-master}"'
 alias gmm='git fetch && git merge "origin/${GIT_MAIN_BRANCH:-master}"'
 alias grbm='git fetch && git rebase "origin/${GIT_MAIN_BRANCH:-master}"'
+alias gfza='git fuzzy-add'
 
 function gnb() {
   if [ "$#" -lt 1 ]; then

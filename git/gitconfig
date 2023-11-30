@@ -6,6 +6,10 @@
   branch-point = !zsh -c 'source "/Users/$(whoami)/.zshrc" && diff --changed-group-format='' <(git rev-list --first-parent "${1:-origin/${GIT_MAIN_BRANCH:-master}}") <(git rev-list --first-parent "${2:-HEAD}") | head -1' -
   # https://jordanelver.co.uk/blog/2020/06/04/fixing-commits-with-git-commit-fixup-and-git-rebase-autosquash/
   fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+  # https://news.ycombinator.com/item?id=38473517 (but fzf uses tab, not space like the comment says)
+  # not sure why the pager option for diff is not respected, but we just inline the same delta config here and it works
+  # TODO: how to get git to show a new file as all additions a la `diff -N`?
+  fuzzy-add = "!git ls-files -m -o --exclude-standard | fzf -m --print0 --preview 'git diff -- {1} | delta --features $(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark-mode || echo light-mode)' | xargs -0 git add"
 
 [color]
   ui = true
@@ -19,6 +23,9 @@
 
 [rebase]
   autosquash = true
+
+[advice]
+  detachedHead = false
 
 # difftastic configuration
 # -----------------------------------------------------------------------------
