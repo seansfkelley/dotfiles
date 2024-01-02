@@ -4,6 +4,11 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias reload="exec -l $SHELL"
 
+function up() {
+  # used as `up 1` or `up 2`, etc.
+  cd $(eval printf '../'%.0s {1..$1});
+}
+
 function notify() {
   "$@"
   exit_code="$?"
