@@ -30,3 +30,5 @@ function gnb() {
   return $?
 }
 compdef _git gnb=git-checkout
+
+alias cci='open "https://app.circleci.com/pipelines/github/$(git ls-remote --get-url origin | sed -E -e "s/^.+:(.+)\.git$/\1/")?branch=$(git rev-parse --abbrev-ref HEAD)"'
