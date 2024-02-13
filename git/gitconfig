@@ -13,6 +13,8 @@
 
 [core]
   fsmonitor = true
+  # default to not paging if it fits on one page; overrides for specific commands below
+  pager = less -X -F
 
 [color]
   ui = true
