@@ -11,6 +11,9 @@
   # TODO: how to get git to show a new file as all additions a la `diff -N`?
   fuzzy-add = "!git ls-files -m -o --exclude-standard | fzf -m --print0 --preview 'git diff -- {1} | delta --features $(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark-mode || echo light-mode)' | xargs -0 git add"
 
+[core]
+  fsmonitor = true
+
 [color]
   ui = true
 
@@ -26,6 +29,13 @@
 
 [advice]
   detachedHead = false
+
+[branch]
+  sort = -committerdate
+
+[rerere]
+  enabled = true
+  autoUpdate = true
 
 # difftastic configuration
 # -----------------------------------------------------------------------------

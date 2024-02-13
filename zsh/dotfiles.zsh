@@ -1,5 +1,5 @@
 DOTFILES="$(cd "$(dirname "$0")" && cd .. && pwd)"
-alias dotfiles="code $DOTFILES ~/.zshrc ~/.zprofile"
+alias dotfiles="code $DOTFILES ~/.zshrc ~/.zprofile ~/.gitconfig"
 
 function push-dotfiles() {
   pushd "$DOTFILES"
