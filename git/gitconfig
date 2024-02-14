@@ -12,7 +12,15 @@
   fuzzy-add = "!git ls-files -m -o --exclude-standard | fzf -m --print0 --preview 'git diff -- {1} | delta --features $(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark-mode || echo light-mode)' | xargs -0 git add"
 
 [core]
-  fsmonitor = true
+  # I'd like to turn fsmonitor on, but for some reason ctrl-C'ing an empty line (or... any command?)
+  # in the shell kills the fsmonitor daemon for the repo that shell is cd'd into, and then the
+  # prompt runs `git status` which restarts the daemon and pays the startup cost -- in short, this
+  # flag causes ctrl-C to take an extra 1-2 seconds which is annoying. Why does ctrl-C kill the
+  # daemon??? This can be seen if you `ps aux | grep` for the process before, then ctrl-C, then
+  # do it again and see the PID is changed. If ENABLE_DIRTY_GIT_PROMPT=false, you'll see that the
+  # process just goes away and isn't replaced because the prompt doesn't run `git status`.
+  # fsmonitor = true
+
   # default to not paging if it fits on one page; overrides for specific commands below
   pager = less -X -F
 
