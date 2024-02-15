@@ -1,4 +1,3 @@
-// Place your settings in this file to overwrite the default settings
 {
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -21,6 +20,9 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml",
     // Disabled until such time as it doesn't remove whitespace inside DOCX text nodes.
@@ -37,14 +39,10 @@
   "editor.guides.bracketPairs": true,
   "editor.linkedEditing": true,
   "editor.minimap.scale": 2,
-  "editor.minimap.scale": 2,
   "editor.minimap.showSlider": "always",
-  "editor.minimap.showSlider": "always",
-  "editor.minimap.size": "fit",
   "editor.minimap.size": "fit",
   "editor.rulers": [100],
   "editor.scrollBeyondLastLine": false,
-  "editor.stickyScroll.enabled": true,
   "editor.stickyScroll.enabled": true,
   "editor.suggest.showStatusBar": true,
   "editor.tabSize": 2,
@@ -108,6 +106,7 @@
   "workbench.activityBar.location": "top",
   "workbench.editor.empty.hint": "hidden",
   "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb",
     "git-rebase-todo": "default"
