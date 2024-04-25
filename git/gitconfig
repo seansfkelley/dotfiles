@@ -3,7 +3,7 @@
 
 [alias]
   # https://stackoverflow.com/a/4991675
-  branch-point = !zsh -c 'source "/Users/$(whoami)/.zshrc" && diff --changed-group-format='' <(git rev-list --first-parent "${1:-origin/${GIT_MAIN_BRANCH:-master}}") <(git rev-list --first-parent "${2:-HEAD}") | head -1' -
+  branch-point = !zsh -c 'source "/Users/$(whoami)/.zshrc" && diff <(git rev-list --first-parent "${1:-origin/${GIT_MAIN_BRANCH:-master}}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne "s/^\\ //p" | head -1' -
   # https://jordanelver.co.uk/blog/2020/06/04/fixing-commits-with-git-commit-fixup-and-git-rebase-autosquash/
   fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
   # https://news.ycombinator.com/item?id=38473517 (but fzf uses tab, not space like the comment says)
