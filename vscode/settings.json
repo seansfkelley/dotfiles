@@ -95,23 +95,23 @@
   "security.workspace.trust.enabled": false,
   "telemetry.telemetryLevel": "off",
   "typescript.preferences.useAliasesForRenames": false,
-  "typescript.tsserver.log": "off",
   "typescript.tsserver.maxTsServerMemory": 8192,
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "vscode-office-xml.formatOnOpen": true,
   "window.autoDetectColorScheme": true,
   "window.confirmBeforeClose": "keyboardOnly",
-  "window.zoomLevel": 2,
   "window.zoomPerWindow": false,
   "workbench.activityBar.location": "top",
   "workbench.editor.empty.hint": "hidden",
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb",
     "git-rebase-todo": "default"
   },
   "workbench.iconTheme": null,
   "workbench.startupEditor": "newUntitledFile",
-  "xml.format.preserveEmptyContent": true
+  "xml.format.preserveEmptyContent": true,
+  "workbench.colorTheme": "Default Light Modern",
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "window.zoomLevel": 1,
+  "chat.commandCenter.enabled": false
 }
