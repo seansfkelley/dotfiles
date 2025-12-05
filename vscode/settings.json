@@ -6,7 +6,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -112,6 +112,8 @@
   "xml.format.preserveEmptyContent": true,
   "workbench.colorTheme": "Default Light Modern",
   "javascript.updateImportsOnFileMove.enabled": "never",
-  "window.zoomLevel": 1,
-  "chat.commandCenter.enabled": false
+  "chat.commandCenter.enabled": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "claudeCode.preferredLocation": "panel",
+  "window.zoomLevel": 1
 }
