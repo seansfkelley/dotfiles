@@ -1,32 +1,32 @@
 {
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[less]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml",
     // Disabled until such time as it doesn't remove whitespace inside DOCX text nodes.
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
   },
   "debug.javascript.codelens.npmScripts": "never",
   "editor.bracketPairColorization.enabled": true,
@@ -47,7 +47,7 @@
   "editor.suggest.showStatusBar": true,
   "editor.tabSize": 2,
   "emmet.includeLanguages": {
-    "erb": "html"
+    "erb": "html",
   },
   "emmet.triggerExpansionOnTab": true,
   "explorer.confirmDelete": false,
@@ -59,7 +59,7 @@
     "*.g": "yacc",
     "*.html.erb": "erb",
     "*.lalrpop": "rust",
-    "*.vert": "glslx"
+    "*.vert": "glslx",
   },
   "files.exclude": {
     "**/*.js.map": true,
@@ -70,7 +70,7 @@
     "**/__generated__": true,
     "**/build": true,
     "**/node_modules": true,
-    "*.log*": true
+    "*.log*": true,
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
@@ -88,7 +88,7 @@
     "**/lib": false,
     "**/sorbet": true,
     "**/vendor": true,
-    "**/yarn.lock": true
+    "**/yarn.lock": true,
   },
   "search.mode": "reuseEditor",
   "search.useIgnoreFiles": true,
@@ -105,15 +105,19 @@
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb",
-    "git-rebase-todo": "default"
+    "git-rebase-todo": "default",
+    "*.lnk": "default",
   },
   "workbench.iconTheme": null,
   "workbench.startupEditor": "newUntitledFile",
   "xml.format.preserveEmptyContent": true,
-  "workbench.colorTheme": "Default Light Modern",
+  "workbench.colorTheme": "Light Modern",
   "javascript.updateImportsOnFileMove.enabled": "never",
   "chat.commandCenter.enabled": false,
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "claudeCode.preferredLocation": "panel",
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "workbench.preferredLightColorTheme": "Light+",
+  "workbench.preferredDarkColorTheme": "Dark+",
+  "workbench.editor.tabActionLocation": "left",
 }
