@@ -1,1 +1,3 @@
-ide/*.lock
+*
+-CLAUDE.md
+-install

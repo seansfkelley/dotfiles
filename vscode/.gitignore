@@ -1,3 +1,5 @@
-workspaceStorage
-globalStorage
-History
+*
+-install
+-keybindings.json
+-settings.json
+-snippets
