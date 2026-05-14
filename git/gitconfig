@@ -90,7 +90,7 @@
                 bold magenta => syntax #ffddff"
 
 [delta "dark-mode"]
-  light = false
+  dark = true
   syntax-theme = Visual Studio Dark+
   map-styles = "bold cyan => syntax #005454, \
                 bold magenta => syntax #540054"
