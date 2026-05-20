@@ -1,5 +1,6 @@
 [user]
   email = seansfkelley@users.noreply.github.com
+  name = Sean Kelley
 
 [alias]
   # https://stackoverflow.com/a/4991675
@@ -46,6 +47,9 @@
 [rerere]
   enabled = true
   autoUpdate = true
+
+[init]
+  defaultBranch = main
 
 # difftastic configuration
 # -----------------------------------------------------------------------------

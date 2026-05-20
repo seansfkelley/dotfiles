@@ -1,3 +1,7 @@
 *
--CLAUDE.md
--install
+!CLAUDE.md
+!install
+!skills/
+!skills/*
+!skills/**/*
+.DS_Store
