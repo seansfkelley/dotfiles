@@ -4,7 +4,7 @@ unset -v GEM_HOME
 
 # for installed completions
 fpath+=~/.zfunc
-autoload -Uz compinit && compinit
+source <path_to_dotfiles>/zsh/compinit.zsh
 
 # antigen
 source <path_to_antigen.zsh>
