@@ -6,7 +6,9 @@
   # https://stackoverflow.com/a/4991675
   branch-point = !zsh -c 'source "/Users/$(whoami)/.zshrc" && diff <(git rev-list --first-parent "${1:-origin/${GIT_MAIN_BRANCH:-master}}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne "s/^\\ //p" | head -1' -
   # https://jordanelver.co.uk/blog/2020/06/04/fixing-commits-with-git-commit-fixup-and-git-rebase-autosquash/
-  fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+  fixup = "!git log -n 100 --pretty=format:'%h %s' --no-merges | fzf | awk '{print $1}' | xargs -o git commit --fixup"
+  # adapted from the above, but plugs the amend right into the selected commit immediately
+  airlift = "!f() { sha=${1:-$(git log -n 100 --pretty=format:'%h %s' --no-merges | fzf | awk '{print $1}')}; [ -n \"$sha\" ] || return 1; git commit --fixup=\"$sha\" && GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash --autostash \"$sha~\"; }; f"
   # https://news.ycombinator.com/item?id=38473517 (but fzf uses tab, not space like the comment says)
   # not sure why the pager option for diff is not respected, but we just inline the same delta config here and it works
   # TODO: how to get git to show a new file as all additions a la `diff -N`?
